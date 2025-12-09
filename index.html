@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مطبوعات ودروع تذكارية مصممة خصيصًا لمناسبتك - جودة عالية وتوصيل سريع في السعودية">
+    <title>مطبوعات ودروع تذكارية مخصصة | السعودية</title>
+    
+    <!-- Google Fonts - Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+           CSS RESET & BASE STYLES
+        ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Color Palette */
+            --primary-color: #1a4d2e;
+            --secondary-color: #2d6a4f;
+            --accent-color: #d4a574;
+            --accent-hover: #c49560;
+            --text-dark: #1f1f1f;
+            --text-gray: #4a4a4a;
+            --text-light: #6b6b6b;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #e5e5e5;
+            
+            /* Spacing */
+            --section-padding: 80px 20px;
+            --section-padding-mobile: 50px 20px;
+            --border-radius: 12px;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ============================================
+           TYPOGRAPHY
+        ============================================ */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        /* ============================================
+           BUTTONS & CTAs
+        ============================================ */
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--bg-white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--bg-white);
+        }
+
+        .btn-large {
+            padding: 18px 48px;
+            font-size: 1.25rem;
+        }
+
+        /* ============================================
+           CONTAINER & LAYOUT
+        ============================================ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: var(--section-padding);
+        }
+
+        /* ============================================
+           HERO SECTION
+        ============================================ */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--bg-white);
+            padding: 100px 20px 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 50px 50px;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            color: var(--bg-white);
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px dashed rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-image-placeholder span {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.125rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ============================================
+           SERVICES SECTION
+        ============================================ */
+        .services {
+            background-color: var(--bg-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-color);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        /* ============================================
+           WHY CHOOSE US SECTION
+        ============================================ */
+        .why-us {
+            background-color: var(--bg-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        .feature-content h3 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-content p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* ============================================
+           PROCESS SECTION
+        ============================================ */
+        .process {
+            background-color: var(--bg-white);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+            color: var(--bg-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .process-step h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .process-step p {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        /* ============================================
+           TESTIMONIALS SECTION
+        ============================================ */
+        .testimonials {
+            background-color: var(--bg-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-white);
+            padding: 35px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 5rem;
+            color: var(--accent-color);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--bg-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .stars {
+            color: var(--accent-color);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ============================================
+           FINAL CTA SECTION
+        ============================================ */
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--bg-white);
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: movePattern 30s linear infinite;
+        }
+
+        @keyframes movePattern {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(30px, 30px); }
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta h2 {
+            color: var(--bg-white);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        .footer {
+            background-color: var(--text-dark);
+            color: var(--bg-white);
+            padding: 50px 20px 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .footer-section ul li::before {
+            content: '✓';
+            color: var(--accent-color);
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+        }
+
+        /* ============================================
+           STICKY WHATSAPP BUTTON
+        ============================================ */
+        .whatsapp-sticky {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 9999;
+            background-color: #25D366;
+            color: var(--bg-white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 2rem;
+        }
+
+        .whatsapp-sticky:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-sticky::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #25D366;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        .whatsapp-sticky span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN - MOBILE
+        ============================================ */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: var(--section-padding-mobile);
+            }
+
+            .hero {
+                padding: 60px 20px 50px;
+                min-height: auto;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text p {
+                font-size: 1.125rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .final-cta h2 {
+                font-size: 1.875rem;
+            }
+
+            .final-cta p {
+                font-size: 1.125rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .whatsapp-sticky {
+                bottom: 20px;
+                left: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 1.75rem;
+            }
+        }
+
+        /* ============================================
+           TABLET
+        ============================================ */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ============================================
+           ACCESSIBILITY
+        ============================================ */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        /* Focus states for accessibility */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         HERO SECTION
+    ============================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>مطبوعات ودروع تذكارية مصممة خصيصًا لمناسبتك</h1>
+                    <p>نصمم وننفذ دروع وهدايا مطبوعة بجودة عالية وتوصيل سريع داخل السعودية</p>
+                    <div class="hero-cta">
+                        <a href="#final-cta" class="btn btn-primary btn-large">اطلب الآن</a>
+                        <a href="https://wa.me/966XXXXXXXXX" class="btn btn-secondary btn-large" target="_blank">تواصل عبر واتساب</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-placeholder">
+                        <span>ضع هنا صورة المنتجات<br>أو الدروع التذكارية<br>(500x400px)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICES SECTION
+    ============================================ -->
+    <section class="services section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>خدماتنا المميزة</h2>
+                <p>نقدم مجموعة متنوعة من المطبوعات والهدايا التذكارية عالية الجودة</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏆</div>
+                    <h3>دروع تكريمية</h3>
+                    <p>دروع فاخرة مصممة خصيصاً للمناسبات والتكريمات بخامات عالية الجودة</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎁</div>
+                    <h3>هدايا تذكارية مخصصة</h3>
+                    <p>هدايا فريدة ومخصصة بالشعارات والأسماء تناسب كل مناسبة</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📜</div>
+                    <h3>شهادات تقدير</h3>
+                    <p>شهادات تقدير راقية مطبوعة على خامات فاخرة بتصاميم احترافية</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🖼️</div>
+                    <h3>لوحات ومطبوعات خاصة</h3>
+                    <p>لوحات جدارية وإعلانية مطبوعة بأحدث التقنيات وأعلى دقة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         WHY CHOOSE US SECTION
+    ============================================ -->
+    <section class="why-us section" id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>لماذا تختارنا؟</h2>
+                <p>نحن الخيار الأمثل لمطبوعاتك وهداياك التذكارية</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">✨</div>
+                    <div class="feature-content">
+                        <h3>تصميم مخصص لكل مناسبة</h3>
+                        <p>فريق تصميم محترف يعمل على إنشاء تصاميم فريدة تناسب احتياجاتك الخاصة</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💎</div>
+                    <div class="feature-content">
+                        <h3>خامات فاخرة</h3>
+                        <p>نستخدم أفضل الخامات والمواد لضمان منتجات تدوم طويلاً وتترك انطباعاً مميزاً</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-content">
+                        <h3>تنفيذ سريع</h3>
+                        <p>نلتزم بمواعيد التسليم ونوفر خدمات التنفيذ السريع للطلبات العاجلة</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🚚</div>
+                    <div class="feature-content">
+                        <h3>توصيل لجميع مناطق المملكة</h3>
+                        <p>خدمة توصيل موثوقة وسريعة لجميع مدن ومحافظات المملكة العربية السعودية</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💬</div>
+                    <div class="feature-content">
+                        <h3>دعم مباشر عبر واتساب</h3>
+                        <p>فريق دعم متواجد للرد على استفساراتك ومتابعة طلبك خطوة بخطوة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PROCESS SECTION
+    ============================================ -->
+    <section class="process section" id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>كيف تتم العملية؟</h2>
+                <p>ثلاث خطوات بسيطة للحصول على طلبك</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>اختر المنتج</h3>
+                    <p>تصفح خدماتنا واختر المنتج أو الخدمة التي تناسب احتياجاتك</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>أرسل التفاصيل أو التصميم</h3>
+                    <p>شاركنا تفاصيل طلبك والتصميم المطلوب عبر واتساب أو البريد الإلكتروني</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>استلم طلبك حتى بابك</h3>
+                    <p>نقوم بالتنفيذ والتوصيل لباب منزلك أو مقر عملك بكل احترافية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TESTIMONIALS SECTION
+    ============================================ -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>آراء عملائنا</h2>
+                <p>ماذا يقول عملاؤنا عن خدماتنا</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">خدمة ممتازة وجودة عالية جداً. الدروع التكريمية كانت فاخرة وأعجبت جميع الحضور في حفل التكريم. التوصيل كان سريع والتعامل احترافي.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">م</div>
+                        <div class="author-info">
+                            <h4>محمد العتيبي</h4>
+                            <p>الرياض</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">تعاملت معهم أكثر من مرة وكل مرة يبهروني بالجودة والاهتمام بالتفاصيل. التصاميم المخصصة كانت رائعة والأسعار مناسبة جداً.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ف</div>
+                        <div class="author-info">
+                            <h4>فاطمة الشمري</h4>
+                            <p>جدة</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">أفضل مكان للهدايا التذكارية المخصصة. طلبت هدايا لموظفي الشركة وكانت النتيجة أكثر من رائعة. شكراً لفريق العمل المتعاون.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ع</div>
+                        <div class="author-info">
+                            <h4>عبدالله القحطاني</h4>
+                            <p>الدمام</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FINAL CTA SECTION
+    ============================================ -->
+    <section class="final-cta" id="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2>خلّي مناسبتك تترك أثر لا يُنسى</h2>
+                <p>احصل على استشارة مجانية وعرض سعر خاص الآن</p>
+                <a href="https://wa.me/966XXXXXXXXX?text=مرحباً، أريد الاستفسار عن خدماتكم" class="btn btn-primary btn-large" target="_blank">احصل على عرض سعر الآن</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>مطبوعات الهدايا</h3>
+                    <p>متخصصون في تصميم وتنفيذ الدروع التكريمية والهدايا المطبوعة بأعلى معايير الجودة في المملكة العربية السعودية.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>تواصل معنا</h3>
+                    <p>📱 واتساب: 966XXXXXXXXX+<br>
+                    📧 البريد: info@example.com<br>
+                    🕒 ساعات العمل: السبت - الخميس<br>
+                    من 9 صباحاً - 6 مساءً</p>
+                </div>
+                <div class="footer-section">
+                    <h3>نخدم جميع مدن المملكة</h3>
+                    <ul>
+                        <li>الرياض</li>
+                        <li>جدة</li>
+                        <li>الدمام</li>
+                        <li>مكة المكرمة</li>
+                        <li>المدينة المنورة</li>
+                        <li>وجميع المدن الأخرى</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 مطبوعات الهدايا. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         STICKY WHATSAPP BUTTON
+    ============================================ -->
+    <a href="https://wa.me/966XXXXXXXXX?text=مرحباً، أريد الاستفسار عن خدماتكم" class="whatsapp-sticky" target="_blank" aria-label="تواصل معنا عبر واتساب">
+        <span>💬</span>
+    </a>
+
+</body>
+</html>
