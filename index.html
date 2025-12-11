@@ -558,6 +558,327 @@
         }
 
         /* ============================================
+   PRODUCTS GALLERY SECTION
+============================================ */
+.products-gallery {
+    background-color: var(--bg-white);
+}
+
+/* Gallery Filters */
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 12px 30px;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Cairo', sans-serif;
+}
+
+.filter-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-white);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    border-color: var(--primary-color);
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    background: var(--bg-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gallery-item.hide {
+    display: none;
+}
+
+.gallery-item:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+}
+
+.gallery-image {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-image img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 77, 46, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.view-btn {
+    padding: 12px 30px;
+    background-color: var(--accent-color);
+    color: var(--bg-white);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Cairo', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.view-btn:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery-caption h4 {
+    color: var(--primary-color);
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-caption p {
+    color: var(--text-light);
+    font-size: 0.938rem;
+    margin: 0;
+}
+
+/* ============================================
+   LIGHTBOX MODAL
+============================================ */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+    color: var(--bg-white);
+    font-size: 1.25rem;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: var(--accent-color);
+    color: var(--bg-white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.lightbox-close:hover {
+    background-color: var(--accent-hover);
+    transform: rotate(90deg);
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent-color);
+    color: var(--bg-white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-prev {
+    right: 30px;
+}
+
+.lightbox-next {
+    left: 30px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE
+============================================ */
+@media (max-width: 768px) {
+    .gallery-filters {
+        gap: 10px;
+    }
+
+    .filter-btn {
+        padding: 10px 20px;
+        font-size: 0.938rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .gallery-image {
+        height: 250px;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .lightbox-prev {
+        right: 15px;
+    }
+
+    .lightbox-next {
+        left: 15px;
+    }
+
+    .lightbox-caption {
+        font-size: 1rem;
+        margin-top: 15px;
+        padding: 12px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+        /* ============================================
            TESTIMONIALS SECTION
         ============================================ */
         .testimonials {
@@ -1156,6 +1477,8 @@
                 <li><a href="#services">خدماتنا</a></li>
                 <li><a href="#why-us">لماذا نحن</a></li>
                 <li><a href="#process">كيف نعمل</a></li>
+                <li><a href="#gallery">معرض الأعمال</a></li>
+
                 <li><a href="#testimonials">آراء العملاء</a></li>
                 <li><a href="#partners">شركاؤنا</a></li>
                 <li><a href="#contact">تواصل معنا</a></li>
@@ -1193,6 +1516,35 @@
         </div>
     </section>
 
+        <!-- ============================================
+         PARTNERS SECTION
+    ============================================ -->
+    <section class="partners section" id="partners">
+        <div class="container">
+            <div class="section-header">
+                <h2>شركاؤنا الناجحون</h2>
+                <p>نفخر بخدمة أفضل الشركات والمؤسسات في المملكة</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <div class="partner-logo-placeholder">شعار الشريك 1</div>
+                </div>
+                <div class="partner-logo">
+                    <div class="partner-logo-placeholder">شعار الشريك 2</div>
+                </div>
+                <div class="partner-logo">
+                    <div class="partner-logo-placeholder">شعار الشريك 3</div>
+                </div>
+                <div class="partner-logo">
+                    <div class="partner-logo-placeholder">شعار الشريك 4</div>
+                </div>
+                <div class="partner-logo">
+                    <div class="partner-logo-placeholder">شعار الشريك 5</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ============================================
          SERVICES SECTION
     ============================================ -->
@@ -1223,6 +1575,169 @@
                     <h3>لوحات ومطبوعات خاصة</h3>
                     <p>لوحات جدارية وإعلانية مطبوعة بأحدث التقنيات وأعلى دقة</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+     PRODUCTS GALLERY SECTION
+    ============================================ -->
+    <section class="products-gallery section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>معرض منتجاتنا</h2>
+                <p>شاهد بعضاً من أعمالنا المميزة والدروع التذكارية التي نفذناها لعملائنا</p>
+            </div>
+            
+            <!-- Category Filter Tabs -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="shields">دروع تكريمية</button>
+                <button class="filter-btn" data-filter="gifts">هدايا مخصصة</button>
+                <button class="filter-btn" data-filter="certificates">شهادات تقدير</button>
+                <button class="filter-btn" data-filter="prints">مطبوعات خاصة</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="gallery-grid">
+                <!-- Product Item 1 -->
+                <div class="gallery-item" data-category="shields">
+                    <div class="gallery-image">
+                        <img src="images/product-1.jpg" alt="درع تكريمي فاخر">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" onclick="openLightbox(0)">
+                                <span>👁️</span> عرض
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>درع تكريمي فاخر</h4>
+                        <p>درع كريستال مع قاعدة خشبية</p>
+                    </div>
+                </div>
+
+                <!-- Product Item 2 -->
+                <div class="gallery-item" data-category="shields">
+                    <div class="gallery-image">
+                        <img src="images/product-2.jpg" alt="درع تذكاري ذهبي">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" onclick="openLightbox(1)">
+                                <span>👁️</span> عرض
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>درع تذكاري ذهبي</h4>
+                        <p>درع معدني مطلي بالذهب</p>
+                    </div>
+                </div>
+
+                <!-- Product Item 3 -->
+                <div class="gallery-item" data-category="gifts">
+                    <div class="gallery-image">
+                        <img src="images/product-3.jpg" alt="هدية مخصصة">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" onclick="openLightbox(2)">
+                                <span>👁️</span> عرض
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>هدية مخصصة</h4>
+                        <p>صندوق هدايا مع شعار الشركة</p>
+                    </div>
+                </div>
+
+                <!-- Product Item 4 -->
+                <div class="gallery-item" data-category="certificates">
+                    <div class="gallery-image">
+                        <img src="images/product-4.jpg" alt="شهادة تقدير">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" onclick="openLightbox(3)">
+                                <span>👁️</span> عرض
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>شهادة تقدير</h4>
+                        <p>شهادة مطبوعة على ورق فاخر</p>
+                    </div>
+                </div>
+
+                <!-- Product Item 5 -->
+                <div class="gallery-item" data-category="prints">
+                    <div class="gallery-image">
+                        <img src="images/product-5.jpg" alt="لوحة مطبوعة">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" onclick="openLightbox(4)">
+                                <span>👁️</span> عرض
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>لوحة مطبوعة</h4>
+                        <p>لوحة إعلانية بتصميم احترافي</p>
+                    </div>
+                </div>
+
+                <!-- Product Item 6 -->
+                <div class="gallery-item" data-category="gifts">
+                    <div class="gallery-image">
+                        <img src="images/product-6.jpg" alt="كأس تذكاري">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" onclick="openLightbox(5)">
+                                <span>👁️</span> عرض
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>كأس تذكاري</h4>
+                        <p>كأس معدني محفور بالليزر</p>
+                    </div>
+                </div>
+
+                <!-- Product Item 7 -->
+                <div class="gallery-item" data-category="shields">
+                    <div class="gallery-image">
+                        <img src="images/product-7.jpg" alt="درع أكريليك">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" onclick="openLightbox(6)">
+                                <span>👁️</span> عرض
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>درع أكريليك شفاف</h4>
+                        <p>درع عصري بتصميم مودرن</p>
+                    </div>
+                </div>
+
+                <!-- Product Item 8 -->
+                <div class="gallery-item" data-category="prints">
+                    <div class="gallery-image">
+                        <img src="images/product-8.jpg" alt="طباعة على الخشب">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" onclick="openLightbox(7)">
+                                <span>👁️</span> عرض
+                            </button>
+                        </div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h4>طباعة على الخشب</h4>
+                        <p>لوحة خشبية مطبوعة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox Modal -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <button class="lightbox-prev" onclick="changeLightboxImage(-1)">&#10095;</button>
+            <button class="lightbox-next" onclick="changeLightboxImage(1)">&#10094;</button>
+            <div class="lightbox-content">
+                <img id="lightbox-image" src="" alt="معاينة المنتج">
+                <div class="lightbox-caption" id="lightbox-caption"></div>
             </div>
         </div>
     </section>
@@ -1276,37 +1791,7 @@
         </div>
     </section>
 
-    <!-- ============================================
-         PARTNERS SECTION
-    ============================================ -->
-    <section class="partners section" id="partners">
-        <div class="container">
-            <div class="section-header">
-                <h2>شركاؤنا الناجحون</h2>
-                <p>نفخر بخدمة أفضل الشركات والمؤسسات في المملكة</p>
-            </div>
-            <div class="partners-grid">
-                <div class="partner-logo">
-                    <div class="partner-logo-placeholder">شعار الشريك 1</div>
-                </div>
-                <div class="partner-logo">
-                    <div class="partner-logo-placeholder">شعار الشريك 2</div>
-                </div>
-                <div class="partner-logo">
-                    <div class="partner-logo-placeholder">شعار الشريك 3</div>
-                </div>
-                <div class="partner-logo">
-                    <div class="partner-logo-placeholder">شعار الشريك 4</div>
-                </div>
-                <div class="partner-logo">
-                    <div class="partner-logo-placeholder">شعار الشريك 5</div>
-                </div>
-                <div class="partner-logo">
-                    <div class="partner-logo-placeholder">شعار الشريك 6</div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- ============================================
          PROCESS SECTION
@@ -1336,6 +1821,9 @@
             </div>
         </div>
     </section>
+    
+    
+
 
     <!-- ============================================
          TESTIMONIALS SECTION
@@ -1580,6 +2068,114 @@
                 navbarMenu.classList.remove('active');
             }
         });
+
+        
+// Gallery Filter Functionality
+const filterButtons = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        const filterValue = button.getAttribute('data-filter');
+        
+        galleryItems.forEach(item => {
+            if (filterValue === 'all') {
+                item.style.display = 'block';
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, 10);
+            } else {
+                if (item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            }
+        });
+    });
+});
+
+// Lightbox Functionality
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightbox-image');
+const lightboxCaption = document.getElementById('lightbox-caption');
+let currentImageIndex = 0;
+
+// Array of all images with their details
+const images = [
+    { src: 'images/product-1.jpg', caption: 'درع تكريمي فاخر - درع كريستال مع قاعدة خشبية' },
+    { src: 'images/product-2.jpg', caption: 'درع تذكاري ذهبي - درع معدني مطلي بالذهب' },
+    { src: 'images/product-3.jpg', caption: 'هدية مخصصة - صندوق هدايا مع شعار الشركة' },
+    { src: 'images/product-4.jpg', caption: 'شهادة تقدير - شهادة مطبوعة على ورق فاخر' },
+    { src: 'images/product-5.jpg', caption: 'لوحة مطبوعة - لوحة إعلانية بتصميم احترافي' },
+    { src: 'images/product-6.jpg', caption: 'كأس تذكاري - كأس معدني محفور بالليزر' },
+    { src: 'images/product-7.jpg', caption: 'درع أكريليك شفاف - درع عصري بتصميم مودرن' },
+    { src: 'images/product-8.jpg', caption: 'طباعة على الخشب - لوحة خشبية مطبوعة' }
+];
+
+function openLightbox(index) {
+    currentImageIndex = index;
+    updateLightboxImage();
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+function changeLightboxImage(direction) {
+    currentImageIndex += direction;
+    
+    if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+    } else if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+    }
+    
+    updateLightboxImage();
+}
+
+function updateLightboxImage() {
+    lightboxImage.src = images[currentImageIndex].src;
+    lightboxCaption.textContent = images[currentImageIndex].caption;
+}
+
+// Close lightbox when clicking outside the image
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    
+    if (e.key === 'Escape') {
+        closeLightbox();
+    } else if (e.key === 'ArrowLeft') {
+        changeLightboxImage(-1);
+    } else if (e.key === 'ArrowRight') {
+        changeLightboxImage(1);
+    }
+});
+
     </script>
 
 </body>
