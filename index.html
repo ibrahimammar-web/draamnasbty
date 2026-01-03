@@ -360,8 +360,8 @@
       .hero-image-placeholder {
         width: 100%;
         height: 400px;
-        background: url("./images/sm-hero.png");
-        background-position: top;
+        background: url("./images/products/image-2.webp");
+        background-position: center;
         background-size: cover;
         border-radius: var(--border-radius);
         display: flex;
@@ -422,13 +422,9 @@
         border-color: var(--accent-color);
       }
 
-      .service-card .img-sm {
-        width: 150px;
-      }
-
       .service-icon {
         font-size: 3rem;
-        /* margin-bottom: 1.5rem; */
+        margin-bottom: 1.5rem;
         color: var(--accent-color);
       }
 
@@ -999,20 +995,13 @@
       }
 
       .payment-grid {
-        /* display: grid;
+        display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 25px;
         margin-top: 40px;
         max-width: 800px;
         margin-right: auto;
         margin-left: auto;
-        justify-content: center; */
-        display: grid;
-        gap: 25px;
-        grid-template-columns: repeat(auto-fit, 200px);
-        justify-content: center;
-        max-width: 800px;
-        margin: 40px auto 0;
       }
 
       .payment-card {
@@ -1039,10 +1028,6 @@
         font-size: 3rem;
       }
 
-      .payment-card .cash {
-        width: 100px;
-      }
-
       .payment-name {
         font-weight: 600;
         color: var(--text-dark);
@@ -1061,7 +1046,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
-        align-items: stretch;
+        align-items: start;
       }
 
       .contact-info-box {
@@ -1118,7 +1103,7 @@
         border-radius: var(--border-radius);
         overflow: hidden;
         box-shadow: var(--shadow-md);
-        height: 100%;
+        height: 450px;
       }
 
       .map-embed iframe {
@@ -1129,12 +1114,13 @@
 
       .map-placeholder {
         width: 100%;
-        height: inherit;
+        height: 450px;
         background: var(--bg-light);
         border-radius: var(--border-radius);
         display: flex;
         align-items: center;
         justify-content: center;
+        border: 3px dashed var(--border-color);
       }
 
       .map-placeholder span {
@@ -1148,15 +1134,12 @@
            FINAL CTA SECTION
         ============================================ */
       .final-cta {
-background:
-  linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)
-  ),
-  url("images/payments-bg.png");        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        color: var(--primary-color);
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        color: var(--bg-white);
         text-align: center;
         padding: 80px 20px;
         position: relative;
@@ -1200,7 +1183,7 @@ background:
       }
 
       .final-cta p {
-        color: var(--bg-white);
+        color: rgba(255, 255, 255, 0.95);
         font-size: 1.25rem;
         margin-bottom: 2.5rem;
       }
@@ -1444,7 +1427,7 @@ background:
 
         .map-embed,
         .map-placeholder {
-          height: 100%;
+          height: 350px;
         }
 
         .final-cta h2 {
@@ -1559,7 +1542,7 @@ background:
                 >اطلب الآن</a
               >
               <a
-                href="https://wa.me/966538031765"
+                href="https://wa.me/966XXXXXXXXX"
                 class="btn btn-secondary btn-large"
                 target="_blank"
                 >تواصل عبر واتساب</a
@@ -1623,9 +1606,7 @@ background:
         </div>
         <div class="services-grid">
           <div class="service-card">
-            <div class="service-icon">
-              <img class="img-sm" src="./images/services/gifts.png" alt="">
-            </div>
+            <div class="service-icon">🏆</div>
             <h3>هدايا تذكارية</h3>
             <p>
               نوفر هدايا تذكارية مميزة بتصاميم مبتكرة وجودة عالية، مناسبة
@@ -1633,9 +1614,7 @@ background:
             </p>
           </div>
           <div class="service-card">
-            <div class="service-icon">
-              <img class="img-sm" src="./images/services/saif.png" alt="">
-            </div>
+            <div class="service-icon">🎁</div>
             <h3>سيوف عربية</h3>
             <p>
               نقدم سيوفاً عربية فاخرة بتجهيزات راقية، قابلة للنقش والتخصيص لتكون
@@ -1643,9 +1622,7 @@ background:
             </p>
           </div>
           <div class="service-card">
-            <div class="service-icon">
-              <img class="img-sm" src="./images/services/golden.png" alt="">
-            </div>
+            <div class="service-icon">📜</div>
             <h3>دروع نحاسية</h3>
             <p>
               دروع نحاسية مصنعة باحترافية عالية، مع إمكانية الحفر والطباعة
@@ -1653,9 +1630,7 @@ background:
             </p>
           </div>
           <div class="service-card">
-            <div class="service-icon">
-              <img class="img-sm" src="./images/services/cristal.png" alt="">
-            </div>
+            <div class="service-icon">🖼️</div>
             <h3>دروع كريستال</h3>
             <p>
               نوفر دروع كريستال أنيقة بتصاميم متعددة، مثالية للتكريم والاحتفالات
@@ -1682,10 +1657,10 @@ background:
         <!-- Category Filter Tabs -->
         <div class="gallery-filters">
           <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="gifts">هدايا تذكارية</button>
           <button class="filter-btn" data-filter="shields">
-            هدايا تذكارية
+            مجسمات وسيوف عربية
           </button>
-          <button class="filter-btn" data-filter="gifts">سيوف عربية</button>
           <button class="filter-btn" data-filter="certificates">
             دروع نحاسية
           </button>
@@ -1695,11 +1670,11 @@ background:
         <!-- Products Grid -->
         <div class="gallery-grid">
           <!-- Product Item 1 -->
-          <div class="gallery-item" data-category="shields">
+          <div class="gallery-item" data-category="gifts">
             <div class="gallery-image">
-              <img src="images/official pictures/product(14).jpeg" alt="درع تكريمي فاخر" />
+              <img src="images/gifts/7.jpg" alt="درع تكريمي فاخر" />
               <div class="gallery-overlay">
-                <button class="view-btn" onclick="openLightbox(0)">
+                <button class="view-btn" >
                   <span>👁️</span> عرض
                 </button>
               </div>
@@ -1711,114 +1686,639 @@ background:
           </div>
 
           <!-- Product Item 2 -->
-          <div class="gallery-item" data-category="shields">
+          <div class="gallery-item" data-category="gifts">
             <div class="gallery-image">
-              <img src="images/official pictures/product(7).jpeg" alt="درع تذكاري ذهبي" />
+              <img src="images/gifts/6.jpg" alt="درع تذكاري ذهبي" />
               <div class="gallery-overlay">
-                <button class="view-btn" onclick="openLightbox(1)">
+                <button class="view-btn" >
                   <span>👁️</span> عرض
                 </button>
               </div>
             </div>
             <div class="gallery-caption">
               <h4>درع تذكاري ذهبي</h4>
-              <p>درع معدني مطلي بالذهب</p>
+              <p>درع معدني ذهبي</p>
+            </div>
+          </div>
+          <!-- Product Item 2 -->
+          <div class="gallery-item" data-category="gifts">
+            <div class="gallery-image">
+              <img src="images/gifts/5.jpg" alt="درع تذكاري ذهبي" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>دروع تذكارية ذهبية وفصية وبرونزية</h4>
+              <p>دروع معدنية</p>
             </div>
           </div>
 
           <!-- Product Item 3 -->
           <div class="gallery-item" data-category="gifts">
             <div class="gallery-image">
-              <img src="images/official pictures/product(5).jpeg" alt="هدية مخصصة" />
+              <img src="images/gifts/10.jpg" alt="هدية مخصصة" />
               <div class="gallery-overlay">
-                <button class="view-btn" onclick="openLightbox(2)">
+                <button class="view-btn" >
                   <span>👁️</span> عرض
                 </button>
               </div>
             </div>
             <div class="gallery-caption">
-              <h4>سيف عربي مع درع</h4>
-              <p>مجسم تذكاري مع سيف ذهبي</p>
+              <h4>هدية مخصصة</h4>
+              <p>درع المعلم الذهبي</p>
             </div>
           </div>
 
           <!-- Product Item 4 -->
-          <div class="gallery-item" data-category="certificates">
+          <div class="gallery-item" data-category="gifts">
             <div class="gallery-image">
-              <img src="images/official pictures/product(2).jpeg" alt="شهادة تقدير" />
+              <img src="images/gifts/1.jpg" alt="شهادة تقدير" />
               <div class="gallery-overlay">
-                <button class="view-btn" onclick="openLightbox(3)">
+                <button class="view-btn" >
                   <span>👁️</span> عرض
                 </button>
               </div>
             </div>
             <div class="gallery-caption">
-              <h4>دروع نحاسية</h4>
-              <p>شهادة مطبوعة على درع فاخر</p>
+              <h4>ميداليات تذكارية</h4>
+              <p>ميداليات بتصميمات تناسب مناسبتك</p>
             </div>
           </div>
 
           <!-- Product Item 5 -->
-          <div class="gallery-item" data-category="prints">
+          <div class="gallery-item" data-category="gifts">
             <div class="gallery-image">
-              <img src="images/official pictures/product(16).jpeg" alt="لوحة مطبوعة" />
+              <img src="images/gifts/2.jpg" alt="لوحة مطبوعة" />
               <div class="gallery-overlay">
-                <button class="view-btn" onclick="openLightbox(4)">
+                <button class="view-btn" >
                   <span>👁️</span> عرض
                 </button>
               </div>
             </div>
             <div class="gallery-caption">
-              <h4>دروع كريستال</h4>
-              <p>شهادات تقدير علي دروع كريستال</p>
+              <h4>ميداليات تذكارية</h4>
+              <p>ميداليات بتصميمات تناسب مناسبتك</p>
             </div>
           </div>
 
           <!-- Product Item 6 -->
           <div class="gallery-item" data-category="gifts">
             <div class="gallery-image">
-              <img src="images/official pictures/product(13).jpeg" alt="كأس تذكاري" />
+              <img src="images/gifts/3.jpg" alt="كأس تذكاري" />
               <div class="gallery-overlay">
-                <button class="view-btn" onclick="openLightbox(5)">
+                <button class="view-btn" >
                   <span>👁️</span> عرض
                 </button>
               </div>
             </div>
             <div class="gallery-caption">
-              <h4>سيف عربي ذهبي</h4>
-              <p>سيف ذهبي محفور بالليزر</p>
+              <h4>صورة في برواز خشبي</h4>
+              <p>برواز خشبي محفور بالليزر</p>
+            </div>
+          </div>
+          <!-- Product Item 6 -->
+          <div class="gallery-item" data-category="gifts">
+            <div class="gallery-image">
+              <img src="images/gifts/4.jpg" alt="كأس تذكاري" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>صورة في برواز خشبي</h4>
+              <p>برواز خشبي محفور بالليزر</p>
             </div>
           </div>
 
           <!-- Product Item 7 -->
-          <div class="gallery-item" data-category="shields">
+          <div class="gallery-item" data-category="gifts">
             <div class="gallery-image">
-              <img src="images/official pictures/product(17).jpeg" alt="درع أكريليك" />
+              <img src="images/gifts/8.jpg" alt="درع أكريليك" />
               <div class="gallery-overlay">
-                <button class="view-btn" onclick="openLightbox(6)">
+                <button class="view-btn" >
                   <span>👁️</span> عرض
                 </button>
               </div>
             </div>
             <div class="gallery-caption">
-              <h4>درع أكريليك شفاف</h4>
-              <p>درع عصري بتصميم مودرن</p>
+              <h4>دروع تذكارية مميزة</h4>
+              <p>دروع عصرية بتصميم مودرن</p>
+            </div>
+          </div>
+          <!-- Product Item 7 -->
+          <div class="gallery-item" data-category="gifts">
+            <div class="gallery-image">
+              <img src="images/gifts/9.jpg" alt="درع أكريليك" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>درع تذكاري مميز</h4>
+              <p>دروع عصرية بتصميم مودرن</p>
             </div>
           </div>
 
           <!-- Product Item 8 -->
-          <div class="gallery-item" data-category="prints">
+          <div class="gallery-item" data-category="certificates">
             <div class="gallery-image">
-              <img src="images/official pictures/product(19).jpeg" alt="طباعة على الخشب" />
+              <img src="images/certificates/21.jpg" alt="طباعة على الخشب" />
               <div class="gallery-overlay">
-                <button class="view-btn" onclick="openLightbox(7)">
+                <button class="view-btn" >
                   <span>👁️</span> عرض
                 </button>
               </div>
             </div>
             <div class="gallery-caption">
-              <h4>دروع كريستال</h4>
-              <p>دروع كريستال محفورة بالليزر</p>
+              <h4>درع تخرج ملازم أول</h4>
+              <p>شهادة تقدير نحاسية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="certificates">
+            <div class="gallery-image">
+              <img src="images/certificates/22.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>درع تخرج ملازم أول</h4>
+              <p>شهادة تقدير نحاسية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="certificates">
+            <div class="gallery-image">
+              <img src="images/certificates/23.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>درع تقدير نحاسي دائري</h4>
+              <p>شهادة تقدير نحاسية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="certificates">
+            <div class="gallery-image">
+              <img src="images/certificates/24.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>درع تقدير فصي</h4>
+              <p>شهادة تقدير</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="certificates">
+            <div class="gallery-image">
+              <img src="images/certificates/25.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>درع تقدير نحاسي</h4>
+              <p>شهادة تقدير</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="certificates">
+            <div class="gallery-image">
+              <img src="images/certificates/26.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>درع تقدير فصي</h4>
+              <p>شهادة تقدير</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="certificates">
+            <div class="gallery-image">
+              <img src="images/certificates/35.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>دروع تقدير خشبية</h4>
+              <p>شهادة تقدير</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="prints">
+            <div class="gallery-image">
+              <img src="images/prints/16.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>دروع تقدير كريستال</h4>
+              <p>شهادة تقدير</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="prints">
+            <div class="gallery-image">
+              <img src="images/prints/17.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>دروع تقدير كريستال</h4>
+              <p>شهادة تقدير</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="prints">
+            <div class="gallery-image">
+              <img src="images/prints/18.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>دروع تقدير كريستال</h4>
+              <p>شهادة تقدير</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="prints">
+            <div class="gallery-image">
+              <img src="images/prints/19.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>دروع تقدير كريستال</h4>
+              <p>شهادة تقدير</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="prints">
+            <div class="gallery-image">
+              <img src="images/prints/30.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>دروع تقدير كريستال</h4>
+              <p>شهادة تقدير</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/2.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/3.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/4.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/5.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/6.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/7.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/8.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/9.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/10.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/11.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/12.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/13.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/14.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/15.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/20.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/27.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/28.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/29.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn" >
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/31.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn">
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/33.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn">
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
+            </div>
+          </div>
+          <!-- Product Item 8 -->
+          <div class="gallery-item" data-category="shields">
+            <div class="gallery-image">
+              <img src="images/shields/34.jpg" alt="طباعة على الخشب" />
+              <div class="gallery-overlay">
+                <button class="view-btn">
+                  <span>👁️</span> عرض
+                </button>
+              </div>
+            </div>
+            <div class="gallery-caption">
+              <h4>مجسمات خشبية تقديريو</h4>
+              <p>هداية تذكارية</p>
             </div>
           </div>
         </div>
@@ -1830,10 +2330,10 @@ background:
           &times;
         </button>
         <button class="lightbox-prev" onclick="changeLightboxImage(-1)">
-          &#10095;
+          &#10094;
         </button>
         <button class="lightbox-next" onclick="changeLightboxImage(1)">
-          &#10094;
+          &#10095;
         </button>
         <div class="lightbox-content">
           <img id="lightbox-image" src="" alt="معاينة المنتج" />
@@ -2001,40 +2501,20 @@ background:
         </div>
         <div class="payment-grid">
           <div class="payment-card">
-            <div class="payment-icon">
-              <img class="cash" src="./images/payments/cash.png" alt="">
-            </div>
+            <div class="payment-icon">💵</div>
             <div class="payment-name">الدفع عند الاستلام</div>
           </div>
           <div class="payment-card">
-            <div class="payment-icon">
-              <img class="cash" src="./images/payments/stcpay.png" alt="">
-            </div>
+            <div class="payment-icon">💳</div>
             <div class="payment-name">STC Pay</div>
           </div>
           <div class="payment-card">
-            <div class="payment-icon">
-              <img class="cash" src="./images/payments/apple.png" alt="">
-            </div>
+            <div class="payment-icon">🍎</div>
             <div class="payment-name">Apple Pay</div>
           </div>
           <div class="payment-card">
-            <div class="payment-icon">
-              <img class="cash" src="./images/payments/bank.png" alt="">
-            </div>
+            <div class="payment-icon">🏦</div>
             <div class="payment-name">تحويل بنكي</div>
-          </div>
-          <div class="payment-card">
-            <div class="payment-icon">
-              <img class="cash" src="./images/payments/tabby.png" alt="">
-            </div>
-            <div class="payment-name">تابي</div>
-          </div>
-          <div class="payment-card">
-            <div class="payment-icon">
-              <img class="cash" src="./images/payments/tamara.png" alt="">
-            </div>
-            <div class="payment-name">تمارا</div>
           </div>
         </div>
       </div>
@@ -2058,8 +2538,8 @@ background:
               <div class="contact-details">
                 <h4>عنواننا</h4>
                 <p>
-                  مقابل المعيقلية، الإمام تركي بن عبدالله<br />الديرة, الرياض
-                
+                  الرياض، المملكة العربية السعودية<br />حي الملقا، طريق الملك
+                  فهد
                 </p>
               </div>
             </div>
@@ -2069,8 +2549,8 @@ background:
               <div class="contact-details">
                 <h4>الهاتف وواتساب</h4>
                 <p>
-                  <a href="https://wa.me/966538031765" target="_blank"
-                    >0538031765</a
+                  <a href="https://wa.me/966XXXXXXXXX" target="_blank"
+                    >966XXXXXXXXX+</a
                   >
                 </p>
               </div>
@@ -2088,17 +2568,34 @@ background:
               <div class="contact-icon">🕒</div>
               <div class="contact-details">
                 <h4>ساعات العمل</h4>
-                <p>السبت - الخميس<br />من 9:00 صباحاً - 11:00 مساءً</p>
+                <p>السبت - الخميس<br />من 9:00 صباحاً - 6:00 مساءً</p>
               </div>
             </div>
           </div>
 
           <div class="map-embed">
+            <!-- Replace the src with your actual Google Maps embed URL -->
+            <!-- To get your embed code:
+                         1. Go to Google Maps
+                         2. Search for your location
+                         3. Click "Share" button
+                         4. Click "Embed a map"
+                         5. Copy the iframe code and paste it here
+                    -->
             <div class="map-placeholder">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3626.775502841172!2d46.70523777536352!3d24.631421278079507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee1cc689299a5%3A0xda60092309a44606!2z2K_Ysdi5INmF2YbYp9iz2KjYqtmK!5e0!3m2!1sen!2ssa!4v1765457652231!5m2!1sen!2ssa" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+              <span
+                >استبدل هذا بكود خريطة جوجل الخاصة بموقعك<br /><br />
+                للحصول على الكود:<br />
+                1. اذهب إلى Google Maps<br />
+                2. ابحث عن عنوانك<br />
+                3. اضغط "مشاركة"<br />
+                4. اختر "تضمين خريطة"<br />
+                5. انسخ كود iframe وضعه هنا</span
+              >
             </div>
-            
+            <!-- Example iframe (replace with your actual location):
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.664043676368!2d46.68538031500199!3d24.713552584133897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQyJzQ4LjgiTiA0NsKwNDEnMTUuNiJF!5e0!3m2!1sen!2ssa!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                    -->
           </div>
         </div>
       </div>
@@ -2113,7 +2610,7 @@ background:
           <h2>خلّي مناسبتك تترك أثر لا يُنسى</h2>
           <p>احصل على استشارة مجانية وعرض سعر خاص الآن</p>
           <a
-            href="https://wa.me/966538031765?text=مرحباً، أريد الاستفسار عن خدماتكم"
+            href="https://wa.me/966XXXXXXXXX?text=مرحباً، أريد الاستفسار عن خدماتكم"
             class="btn btn-primary btn-large"
             target="_blank"
             >احصل على عرض سعر الآن</a
@@ -2138,10 +2635,10 @@ background:
           <div class="footer-section">
             <h3>تواصل معنا</h3>
             <p>
-              📱 واتساب: 0538031765<br />
+              📱 واتساب: 966XXXXXXXXX+<br />
               📧 البريد: info@example.com<br />
               🕒 ساعات العمل: السبت - الخميس<br />
-              من 9 صباحاً - 11 مساءً
+              من 9 صباحاً - 6 مساءً
             </p>
           </div>
           <div class="footer-section">
@@ -2157,7 +2654,7 @@ background:
           </div>
         </div>
         <div class="footer-bottom">
-          <p>© 2025 درع مناسبتي. جميع الحقوق محفوظة.</p>
+          <p>© 2025 مطبوعات الهدايا. جميع الحقوق محفوظة.</p>
         </div>
       </div>
     </footer>
@@ -2216,7 +2713,7 @@ background:
 
       // Gallery Filter Functionality
       const filterButtons = document.querySelectorAll(".filter-btn");
-      const galleryItems = document.querySelectorAll(".gallery-item");
+
 
       filterButtons.forEach((button) => {
         button.addEventListener("click", () => {
@@ -2253,76 +2750,95 @@ background:
         });
       });
 
-      // Lightbox Functionality
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImage = document.getElementById("lightbox-image");
-      const lightboxCaption = document.getElementById("lightbox-caption");
-      let currentImageIndex = 0;
+      // عناصر الـ Lightbox
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightbox-image");
+const lightboxCaption = document.getElementById("lightbox-caption");
+let currentImageIndex = 0;
 
-      // Array of all images with their details
-      const images = [
-        {
-          src: "images/official pictures/product(14).jpeg",
-          caption: "هدية تذكارية فاخرة - درع التميز",
-        },
-        {
-          src: "images/official pictures/product(7).jpeg",
-          caption: "درع تذكاري ذهبي - درع معدني مطلي بالذهب",
-        },
-        {
-          src: "images/official pictures/product(5).jpeg",
-          caption: "سيف عربي مع درع - مجسم تذكاري مع سيف ذهبي",
-        },
-        {
-          src: "images/official pictures/product(2).jpeg",
-          caption: "دروع نحاسية - شهادة مطبوعة على درع فاخر",
-        },
-        {
-          src: "images/official pictures/product(16).jpeg",
-          caption: "دروع كريستال - شهادات تقدير علي دروع كريستال",
-        },
-        {
-          src: "images/official pictures/product(13).jpeg",
-          caption: "سيف عربي ذهبي - سيف ذهبي محفور بالليزر",
-        },
-        {
-          src: "images/official pictures/product(17).jpeg",
-          caption: "درع أكريليك شفاف - درع عصري بتصميم مودرن",
-        },
-        {
-          src: "images/official pictures/product(19).jpeg",
-          caption: "دروع كريستال - دروع كريستال محفورة بالليزر",
-        },
-      ];
+// نبني Array ديناميكي من كل الصور في المعرض
+const galleryItems = Array.from(document.querySelectorAll(".gallery-item"));
+const images = galleryItems.map((item, index) => {
+  const img = item.querySelector("img");
+  const title = item.querySelector(".gallery-caption h4");
+  const desc = item.querySelector(".gallery-caption p");
 
-      function openLightbox(index) {
-        currentImageIndex = index;
-        updateLightboxImage();
-        lightbox.classList.add("active");
-        document.body.style.overflow = "hidden";
-      }
+  // نخزن index على العنصر نفسه لاستخدامه لاحقاً
+  item.dataset.index = index;
 
-      function closeLightbox() {
-        lightbox.classList.remove("active");
-        document.body.style.overflow = "auto";
-      }
+  return {
+    src: img.getAttribute("src"),
+    caption:
+      (title ? title.textContent : "") +
+      (desc ? " - " + desc.textContent : ""),
+  };
+});
 
-      function changeLightboxImage(direction) {
-        currentImageIndex += direction;
+// ربط أزرار العرض بالـ Lightbox
+const viewButtons = document.querySelectorAll(".gallery-item .view-btn");
 
-        if (currentImageIndex < 0) {
-          currentImageIndex = images.length - 1;
-        } else if (currentImageIndex >= images.length) {
-          currentImageIndex = 0;
-        }
+viewButtons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
 
-        updateLightboxImage();
-      }
+    const item = btn.closest(".gallery-item");
+    const index = parseInt(item.dataset.index, 10);
 
-      function updateLightboxImage() {
-        lightboxImage.src = images[currentImageIndex].src;
-        lightboxCaption.textContent = images[currentImageIndex].caption;
-      }
+    openLightbox(index);
+  });
+});
+
+function openLightbox(index) {
+  currentImageIndex = index;
+  updateLightboxImage();
+  lightbox.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  document.body.style.overflow = "auto";
+}
+
+function changeLightboxImage(direction) {
+  currentImageIndex += direction;
+
+  if (currentImageIndex < 0) {
+    currentImageIndex = images.length - 1;
+  } else if (currentImageIndex >= images.length) {
+    currentImageIndex = 0;
+  }
+
+  updateLightboxImage();
+}
+
+function updateLightboxImage() {
+  const imageData = images[currentImageIndex];
+  lightboxImage.src = imageData.src;
+  lightboxCaption.textContent = imageData.caption || "";
+}
+
+// إغلاق الـ Lightbox عند الضغط خارج المحتوى
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+// دعم الكيبورد (اختياري)
+document.addEventListener("keydown", (e) => {
+  if (!lightbox.classList.contains("active")) return;
+
+  if (e.key === "Escape") {
+    closeLightbox();
+  } else if (e.key === "ArrowLeft") {
+    changeLightboxImage(1); // لأنه RTL
+  } else if (e.key === "ArrowRight") {
+    changeLightboxImage(-1);
+  }
+});
+
 
       // Close lightbox when clicking outside the image
       lightbox.addEventListener("click", (e) => {
